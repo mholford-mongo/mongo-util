@@ -41,7 +41,6 @@ import org.slf4j.LoggerFactory;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import com.mongodb.ReadConcern;
 import com.mongodb.ReadPreference;
 import com.mongodb.connection.ClusterDescription;
 import com.mongodb.connection.ClusterType;
@@ -106,11 +105,11 @@ public abstract class AbstractMongoReplayUtil {
         
         replayOptions.setWriteConcern(mongoClient.getWriteConcern().asDocument());
         
-        ReadConcern readConcern = mongoClient.getReadConcern();
-        if (readConcern != null && readConcern.getLevel() != null) {
-            replayOptions.setReadConcernLevel(readConcern.getLevel());
-            
-        }
+//        ReadConcern readConcern = mongoClient.getReadConcern();
+//        if (readConcern != null && readConcern.getLevel() != null) {
+//            replayOptions.setReadConcernLevel(readConcern.getLevel());
+//            
+//        }
         
         int seedListSize = mongoClient.getAllAddress().size();
         if (seedListSize == 1) {

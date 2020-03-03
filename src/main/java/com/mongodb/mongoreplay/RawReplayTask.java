@@ -18,8 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mongodb.MongoClient;
-import com.mongodb.ReadConcern;
-import com.mongodb.ReadConcernLevel;
 import com.mongodb.util.ShapeUtil;
 
 public class RawReplayTask implements Callable<ReplayResult> {

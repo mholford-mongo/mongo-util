@@ -8,8 +8,6 @@ import java.util.Set;
 import org.bson.BsonDocument;
 import org.bson.BsonString;
 
-import com.mongodb.ReadConcernLevel;
-
 public class ReplayOptions {
     
     private Set<String> ignoredCollections = new HashSet<String>();
@@ -48,10 +46,10 @@ public class ReplayOptions {
         this.writeConcern = writeConcern;
     }
     
-    public void setReadConcernLevel(ReadConcernLevel level) {
-        this.readConcernDocument = new BsonDocument();
-        readConcernDocument.put("level", new BsonString(level.getValue()));
-    }
+//    public void setReadConcernLevel(ReadConcernLevel level) {
+//        this.readConcernDocument = new BsonDocument();
+//        readConcernDocument.put("level", new BsonString(level.getValue()));
+//    }
 
     public BsonDocument getReadConcern() {
         return readConcernDocument;
