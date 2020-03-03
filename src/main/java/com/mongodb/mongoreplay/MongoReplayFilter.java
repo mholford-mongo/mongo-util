@@ -64,9 +64,9 @@ public class MongoReplayFilter {
     private final BasicBSONEncoder encoder;
     private final BSONDecoder decoder;
     
-    CodecRegistry registry = fromRegistries(fromProviders(new UuidCodecProvider(UuidRepresentation.STANDARD)),
-            MongoClient.getDefaultCodecRegistry());
-    DocumentCodec documentCodec = new DocumentCodec(registry);
+//    CodecRegistry registry = fromRegistries(fromProviders(new UuidCodecProvider(UuidRepresentation.STANDARD)),
+//            MongoClient.getDefaultCodecRegistry());
+    DocumentCodec documentCodec = new DocumentCodec();
 
     private String[] removeUpdateFields;
 
